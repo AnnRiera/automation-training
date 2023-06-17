@@ -1,0 +1,32 @@
+{
+  "name": "automation-training",
+  "version": "1.0.0",
+  "description": "This is part of the automation training",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run prepare",
+    "prepare": "husky install",
+    "headless": "npx cypress run --headless"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnnRiera/automation-training.git"
+  },
+  "keywords": [
+    "cypress",
+    "automation",
+    "nodejs"
+  ],
+  "author": "Ana Riera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnnRiera/automation-training/issues"
+  },
+  "homepage": "https://github.com/AnnRiera/automation-training#readme",
+  "devDependencies": {
+    "cypress": "^12.14.0",
+    "dotenv": "^16.3.0",
+    "eslint": "^8.43.0",
+    "husky": "^8.0.3"
+  }
+}
