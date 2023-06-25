@@ -38,11 +38,20 @@ Cypress.Commands.add('filledForm', (selector, param) => {
                 .and('eq', param);
 });
 
-Cypress.Commands.add('handleDate', (selector, param) => {
+Cypress.Commands.add('handleDropdowns', (selector, param) => {
     return cy.get(selector)
-                .select(param)
+                .select(param);
+})
+
+Cypress.Commands.add('handleDate', (selector, param) => {
+    return cy.handleDropdowns(selector, param)
                 .should('not.be.empty')
                 .invoke('val')
                 .should('not.be.NaN')
                 .and('eq', param);
+});
+
+Cypress.Commands.add('clickOption', (selector) => {
+    cy.contains(selector)
+        .click();
 });
