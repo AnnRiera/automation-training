@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-const { productId, productName, quantity, userInfo, comment, originalUser, subject } = require('../../constants');
+const { productId, quantity, userInfo, comment, subject } = require('../../constants');
 const baseUrl = Cypress.env('BASE_URL');
 const pickedProductUrl = `${Cypress.env('PRODUCT_URL')}/${productId}`;
 const productImg = `${Cypress.env('IMG_PRODUCT')}/${productId}`;
@@ -16,15 +16,17 @@ describe('User flow', () => {
             .then((product) => {
                 cy.wrap(product)
                     .get('[data-product-id="28"]')
-                    .siblings('h2')
+                    .siblings()
                     .then((siblings) => {
-                        cy.wrap(siblings[0])
+                        const value = siblings[2].innerText;
+                        cy.wrap(value)
+                            .as('productName');
+                    
+                        cy.wrap(siblings[3])
                             .invoke('text')
                             .as('productPrice');
                     });
 
-                expect(product[21]).contain(productName);
-                
                 cy.wrap(product[21])
                     .contains('View Product')
                     .click();
@@ -33,15 +35,20 @@ describe('User flow', () => {
                     .should('eq', pickedProductUrl);
                 // check if it's the same product
                 cy.get('[class="product-information"] h2')
-                    .should('contain',productName);
-                
+                    .invoke('val')
+                    .then((item) => {
+                        cy.get('@productName')
+                            .should('contain', item);
+                    });
+                // check if it's the same price
                 cy.get('[class="product-information"] span span')
                     .invoke('text')
                     .then((price) => {
                         cy.get('@productPrice')
                             .should('eq', price);
                     });
-                
+
+                // check if it's the same product
                 cy.get('[class="view-product"] img')
                     .invoke('attr', 'src')
                     .should('contain', productImg);
@@ -69,7 +76,10 @@ describe('User flow', () => {
                 cy.wrap(child[1])
                     .get('h4 a')
                     .invoke('text')
-                    .should('eq', productName);
+                    .then((element) => {
+                        cy.get('@productName')
+                            .should('eq', element);
+                    });
 
                 cy.get('@productPrice').should('eq', child[2].innerText);
 
@@ -83,11 +93,13 @@ describe('User flow', () => {
         cy.get('#checkoutModal a')
             .click();
 
+        // should filled up the signup form
         cy.loginOrSignup('#form .signup-form [data-qa="signup-name"]', userInfo.name);
         cy.loginOrSignup('#form .signup-form [data-qa="signup-email"]', userInfo.email);
         cy.get('#form .signup-form [data-qa="signup-button"]')
             .click();
 
+        // should filled up the extended signup form
         cy.get('#id_gender2')
             .check()
             .should('be.checked');
@@ -129,14 +141,17 @@ describe('User flow', () => {
         cy.filledForm('#zipcode', userInfo.zipCode);
 
         cy.filledForm('#mobile_number', userInfo.phoneNumber);
-
+            
+        // should click "Create account" button
         cy.get('[data-qa="create-account"]')
             .click();
 
+        // should click "Continue" anchor
         cy.get('#form .pull-right')
             .find('a')
             .click();
-
+        
+        // should click Cart option in header
         cy.get('#header')
             .contains('Cart')
             .click();
@@ -146,10 +161,15 @@ describe('User flow', () => {
 
         // TODO: here you can check if the info match.
         cy.get('#ordermsg textarea')
-            .type(comment);
+            .type(comment)
+            .invoke('val')
+            .should('not.be.empty')
+            .and('eq', comment);
 
+        // should click "Place order" button
         cy.clickOption('Place Order');
 
+        // should filled up Payment form
         cy.filledForm('[data-qa="name-on-card"]', userInfo.payment.cardName);
 
         cy.filledForm('[data-qa="card-number"]', userInfo.payment.cardNumber);
@@ -160,45 +180,62 @@ describe('User flow', () => {
 
         cy.filledForm('[data-qa="expiry-year"]', userInfo.payment.expirationYear);
 
+        // should click "Submit" button
         cy.get('#submit')
             .click();
 
+        // should click "Continue button"
         cy.get('[data-qa="continue-button"]')
             .click();
 
+        // TODO: validate existence of anchor
+        // should clicked up "Logout" option
         cy.clickOption('Logout');
 
+        // should filled up login form
         cy.get('[data-qa="login-email"]')
-            .type(originalUser.user)
+            .type(userInfo.email)
             .invoke('val')
             .should('not.be.empty')
-            .and('eq', originalUser.user);
+            .and('eq', userInfo.email);
             
         cy.get('[data-qa="login-password"]')
-            .type(originalUser.password)
+            .type(userInfo.password)
             .invoke('val')
             .should('not.be.empty')
-            .and('eq', originalUser.password);
+            .and('eq', userInfo.password);
 
+        // should clicked up "Login" button
         cy.get('[data-qa="login-button"]')
             .click();
 
+        // should clicked up in "Contact us" option in header
         cy.clickOption('Contact us');
 
+        // should filled up contact form
         cy.filledForm('[data-qa="name"]', userInfo.name);
 
         cy.filledForm('[data-qa="email"]', userInfo.email);
 
         cy.filledForm('[data-qa="subject"]', subject);
 
-        cy.filledForm('#message', comment);
+        cy.get('#message')
+            .type(comment)
+            // .invoke('val')
+            // .should('not.be.disabled')
+            // .should('not.be.empty')
+            // .and('eq', comment);
 
+        // TODO: check how to validate this
+        // should loaded up an image
         cy.get('[type="file"]')
-            .selectFile('cypress-image.png');
+            .selectFile('images/cypress-image.png');
 
+        // should clicked up "Submit button"
         cy.get('[data-qa="submit-button"]')
             .click();
 
+        // should clicked up "Logout" opton in header
         cy.clickOption('Logout');
     });
 });

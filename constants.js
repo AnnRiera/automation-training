@@ -2,7 +2,6 @@ const crypto = require('crypto');
 
 const productId = 28;
 const quantity = 30;
-const productName = 'Pure Cotton V-Neck T-Shirt';
 const subject = 'Test subject';
 const comment = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
 const userInfo = {
@@ -27,11 +26,7 @@ const userInfo = {
         expirationYear: '2030',
     }
 };
-const originalUser = {
-    user: 'jane.doe@example.com',
-    password: userInfo.password
-}
 
 module.exports = {
-    productId, productName, quantity, userInfo, comment, originalUser, subject,
+    productId, quantity, userInfo, comment, subject,
 };
