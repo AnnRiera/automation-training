@@ -1,6 +1,5 @@
 const crypto = require('crypto');
 
-const productId = 28;
 const quantity = 30;
 const subject = 'Test subject';
 const comment = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
@@ -19,7 +18,7 @@ const userInfo = {
     zipCode: '33178',
     phoneNumber: '+1 305 400 87 71',
     payment: {
-        cardName: 'Tasnim Wildschut',
+        cardName: 'Jane Doe',
         cardNumber: '5422533266019495',
         cvv: '748',
         expirationMonth: '05',
@@ -28,5 +27,5 @@ const userInfo = {
 };
 
 module.exports = {
-    productId, quantity, userInfo, comment, subject,
+    quantity, userInfo, comment, subject,
 };
