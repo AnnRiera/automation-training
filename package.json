@@ -6,9 +6,10 @@
   "scripts": {
     "tests": "npm run prepare",
     "prepare": "husky install",
+    "headed": "npx cypress open",
     "headless": "npx cypress run --headless",
     "reports": "npx cypress run",
-    "format": "prettier --write ."
+    "format": "prettier --write . --single-quote"
   },
   "lint-staged": {
     "*.{js,jsx}": "prettier --write",
