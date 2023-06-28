@@ -4,3 +4,4 @@ cypress/e2e/1*
 cypress/e2e/2*
 cypress/screenshots
 cypress/videos
+cypress/reports
