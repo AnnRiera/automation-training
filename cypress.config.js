@@ -18,7 +18,8 @@ module.exports = defineConfig({
       ...process.env,
     },
     experimentalMemoryManagement: true,
-    video: false,
+    video: true,
+    trashAssetsBeforeRuns: true,
   },
   reporter: "cypress-mochawesome-reporter",
   reporterOptions: {
@@ -28,4 +29,6 @@ module.exports = defineConfig({
     inlineAssets: true,
     reportDir: "cypress/reports",
   },
+  defaultCommandTimeout: 6000,
+  retries: 1,
 });

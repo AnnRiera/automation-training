@@ -14,6 +14,12 @@ You also need to have a `.env` file with the URL of the website.
 
 ```
 BASE_URL=https://example.com/
+PRODUCT_URL=https://example.com/product_details/{id}
+CART_URL=https://example.com/view_cart
+LOGIN_URL=https://example.com/login
+CONTACT_US=https://example.com/contact_us
+SIGNUP_URL=https://example.com/signup
+PAYMENT_URL=https://example.com/payment
 ```
 
 ## Commands
