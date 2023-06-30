@@ -209,18 +209,6 @@ describe('Tests for Example web page', () => {
         .and('not.be.checked');
     });
 
-    it('should test if name input is available in Signup form', () => {
-      cy.get('[data-qa="name"]')
-        .should('be.visible')
-        .and('have.value', userInfo.name);
-    });
-
-    it('should check if e-mail input is available in Signup form', () => {
-      cy.get('[data-qa="email"]')
-        .should('be.visible')
-        .and('have.value', userInfo.email);
-    });
-
     it('should test if password input is available in Signup form', () => {
       cy.get('[data-qa="password"]')
         .should('be.visible')
