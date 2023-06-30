@@ -64,7 +64,7 @@ describe('Tests for Example web page', () => {
         });
     });
 
-    it('should check if Login option in navbar exist', () => {
+    it('should check if Contact us option in navbar exist', () => {
       cy.get('#header')
         .contains('Contact us')
         .invoke('attr', 'href')
