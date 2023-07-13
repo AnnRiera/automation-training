@@ -1,10 +1,12 @@
 {
-  "name": "automation-exercise-v2",
+  "name": "automation-training",
   "version": "2.0.0",
-  "description": "This is the v2.0.0 of the current exercise",
+  "description": "This is version 2.0.0 for current exercise",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "headed": "npx cypress open",
+    "headless": "npx cypress run --headless",
+    "reports": "npx cypress run"
   },
   "repository": {
     "type": "git",
@@ -13,12 +15,16 @@
   "keywords": [
     "cypress",
     "automation",
-    "exercise"
+    "nodejs"
   ],
   "author": "Ana Riera",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/AnnRiera/automation-training/issues"
   },
-  "homepage": "https://github.com/AnnRiera/automation-training#readme"
+  "homepage": "https://github.com/AnnRiera/automation-training#readme",
+  "devDependencies": {
+    "cypress": "^12.14.0",
+    "cypress-mochawesome-reporter": "^3.5.1"
+  }
 }
