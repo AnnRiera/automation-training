@@ -1,0 +1,24 @@
+{
+  "name": "automation-exercise-v2",
+  "version": "2.0.0",
+  "description": "This is the v2.0.0 of the current exercise",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnnRiera/automation-training.git"
+  },
+  "keywords": [
+    "cypress",
+    "automation",
+    "exercise"
+  ],
+  "author": "Ana Riera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnnRiera/automation-training/issues"
+  },
+  "homepage": "https://github.com/AnnRiera/automation-training#readme"
+}

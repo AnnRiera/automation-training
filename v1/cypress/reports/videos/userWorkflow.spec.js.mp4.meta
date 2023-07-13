@@ -1,0 +1,196 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=2731
+END=7178
+title=Tests for Example web page Home tests should test URL connection
+[CHAPTER]
+TIMEBASE=1/1000
+START=9871
+END=11628
+title=Tests for Example web page Home tests should check if item has View Product anchor
+[CHAPTER]
+TIMEBASE=1/1000
+START=10721
+END=13388
+title=Tests for Example web page Home tests should check if View Product redirects to expected url
+[CHAPTER]
+TIMEBASE=1/1000
+START=14110
+END=16057
+title=Tests for Example web page Home tests should check if Cart option in navbar exist
+[CHAPTER]
+TIMEBASE=1/1000
+START=16486
+END=18006
+title=Tests for Example web page Home tests should check if Login option in navbar exist
+[CHAPTER]
+TIMEBASE=1/1000
+START=16693
+END=19529
+title=Tests for Example web page Home tests should check if Contact us option in navbar exist
+[CHAPTER]
+TIMEBASE=1/1000
+START=21706
+END=22368
+title=Tests for Example web page Product page tests should test if quantity input is available
+[CHAPTER]
+TIMEBASE=1/1000
+START=21570
+END=23032
+title=Tests for Example web page Product page tests should test if quantity input is numeric
+[CHAPTER]
+TIMEBASE=1/1000
+START=22696
+END=24495
+title=Tests for Example web page Product page tests should check if Add to cart button is available
+[CHAPTER]
+TIMEBASE=1/1000
+START=25247
+END=26297
+title=Tests for Example web page Login/Signup page tests should test if name input is available in Signup form
+[CHAPTER]
+TIMEBASE=1/1000
+START=26664
+END=27349
+title=Tests for Example web page Login/Signup page tests should test if e-mail input is available in Signup form
+[CHAPTER]
+TIMEBASE=1/1000
+START=27356
+END=28037
+title=Tests for Example web page Login/Signup page tests should check if Signup button is available
+[CHAPTER]
+TIMEBASE=1/1000
+START=28034
+END=28719
+title=Tests for Example web page Login/Signup page tests should test if e-mail input is available in Login form
+[CHAPTER]
+TIMEBASE=1/1000
+START=27918
+END=29406
+title=Tests for Example web page Login/Signup page tests should test if password input is available in Login form
+[CHAPTER]
+TIMEBASE=1/1000
+START=30165
+END=30897
+title=Tests for Example web page Login/Signup page tests should check if Login button is available
+[CHAPTER]
+TIMEBASE=1/1000
+START=31041
+END=31630
+title=Tests for Example web page Payment page tests should test if name on card input is available in Payment form
+[CHAPTER]
+TIMEBASE=1/1000
+START=31604
+END=32220
+title=Tests for Example web page Payment page tests should test if card number input is available in Payment form
+[CHAPTER]
+TIMEBASE=1/1000
+START=32157
+END=32838
+title=Tests for Example web page Payment page tests should check if cvc input is available in Payment form
+[CHAPTER]
+TIMEBASE=1/1000
+START=32895
+END=33520
+title=Tests for Example web page Payment page tests should test if expiry month input is available in Payment form
+[CHAPTER]
+TIMEBASE=1/1000
+START=33221
+END=34147
+title=Tests for Example web page Payment page tests should test if expiry year input is available in Payment form
+[CHAPTER]
+TIMEBASE=1/1000
+START=34353
+END=35074
+title=Tests for Example web page Payment page tests should check if Pay and Confirm Order button is available in Payment form
+[CHAPTER]
+TIMEBASE=1/1000
+START=32502
+END=35797
+title=Tests for Example web page Signup page tests should test if gender checkboxs are available in Signup form
+[CHAPTER]
+TIMEBASE=1/1000
+START=35929
+END=39096
+title=Tests for Example web page Signup page tests should test if password input is available in Signup form
+[CHAPTER]
+TIMEBASE=1/1000
+START=39268
+END=42267
+title=Tests for Example web page Signup page tests should test if days dropdown is available in Signup form
+[CHAPTER]
+TIMEBASE=1/1000
+START=42240
+END=45269
+title=Tests for Example web page Signup page tests should test if months dropdown is available in Signup form
+[CHAPTER]
+TIMEBASE=1/1000
+START=44935
+END=48302
+title=Tests for Example web page Signup page tests should test if years dropdown is available in Signup form
+[CHAPTER]
+TIMEBASE=1/1000
+START=48798
+END=51673
+title=Tests for Example web page Signup page tests should test if newsletter checkbox is available in Signup form
+[CHAPTER]
+TIMEBASE=1/1000
+START=52436
+END=54550
+title=Tests for Example web page Signup page tests should test if offers checkbox is available in Signup form
+[CHAPTER]
+TIMEBASE=1/1000
+START=52744
+END=56665
+title=Tests for Example web page Signup page tests should test if first name input is available in Signup form
+[CHAPTER]
+TIMEBASE=1/1000
+START=58107
+END=60589
+title=Tests for Example web page Signup page tests should check if last name input is available in Signup form
+[CHAPTER]
+TIMEBASE=1/1000
+START=59764
+END=63073
+title=Tests for Example web page Signup page tests should check if adress input is available in Signup form
+[CHAPTER]
+TIMEBASE=1/1000
+START=63520
+END=66386
+title=Tests for Example web page Signup page tests should check if company input is available in Signup form
+[CHAPTER]
+TIMEBASE=1/1000
+START=65729
+END=69255
+title=Tests for Example web page Signup page tests should test if country dropdown is available in Signup form
+[CHAPTER]
+TIMEBASE=1/1000
+START=70559
+END=72784
+title=Tests for Example web page Signup page tests should check if state input is available in Signup form
+[CHAPTER]
+TIMEBASE=1/1000
+START=71628
+END=75012
+title=Tests for Example web page Signup page tests should check if city input is available in Signup form
+[CHAPTER]
+TIMEBASE=1/1000
+START=75656
+END=78398
+title=Tests for Example web page Signup page tests should check if zipcode input is available in Signup form
+[CHAPTER]
+TIMEBASE=1/1000
+START=78656
+END=81145
+title=Tests for Example web page Signup page tests should check if phone number input is available in Signup form
+[CHAPTER]
+TIMEBASE=1/1000
+START=81462
+END=83636
+title=Tests for Example web page Signup page tests should check if Create Account button is available in Signup form
+[CHAPTER]
+TIMEBASE=1/1000
+START=35925
+END=85812
+title=Tests for Example web page User flow should view products, add to cart, signup, do the checkout, leave a comment and logout
