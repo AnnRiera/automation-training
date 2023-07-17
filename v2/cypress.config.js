@@ -6,17 +6,15 @@ module.exports = defineConfig({
     setupNodeEvents(on) {
       require('cypress-mochawesome-reporter/plugin')(on);
     },
-    specPattern: 'cypress/e2e/*.{js,jsx,ts,tsx}',
-    excludeSpecPattern: [
-      '**/1-getting-started/*.ts',
-      '**/2-advance-examples/*.ts',
-    ],
+    specPattern: '**/store/*/*.{js,jsx,ts,tsx}',
     baseUrl: 'https://automationexercise.com/',
     viewportWidth: 1920,
     viewportHeight: 1080,
-    experimentalMemoryManagement: true,
     video: true,
     trashAssetsBeforeRuns: true,
+  },
+  env: {
+    PRODUCT_ID: '28',
   },
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
@@ -26,6 +24,4 @@ module.exports = defineConfig({
     inlineAssets: true,
     reportDir: 'cypress/reports',
   },
-  defaultCommandTimeout: 6000,
-  retries: 1,
 });
