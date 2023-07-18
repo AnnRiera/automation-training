@@ -11,15 +11,17 @@ class ProductDetails {
     }
 
     getProductName() {
-        return cy.get('[class="product-information"] h2');
+        return cy.get('.product-details .product-information h2');
     }
 
     getProductPrice() {
-        return cy.get('[class="product-information"] span span');
+        return cy.get('[class="product-information"] span span')
+            .invoke('text');
     }
 
     getProductImage() {
-        return cy.get('[class="view-product"] img');
+        return cy.get('[class="view-product"] img')
+            .invoke('attr', 'src');
     }
 }
 

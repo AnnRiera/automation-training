@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/AnnRiera/automation-training#readme",
   "devDependencies": {
+    "@faker-js/faker": "^8.0.2",
     "cypress": "^12.17.0",
     "cypress-mochawesome-reporter": "^3.5.1"
   }

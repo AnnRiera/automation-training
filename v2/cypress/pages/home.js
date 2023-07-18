@@ -21,28 +21,31 @@ class Home {
 
     lookForAProductInformation(product) {
         return cy.wrap(product)
-                    .contains('View Product');
+            .get('[data-product-id="28"]')
+            .siblings();
+    }
+
+    lookForAProductButton(product) {
+        return cy.wrap(product)
+                .contains('View Product');
     }
 
     selectAProduct() {
         this.scroll();
         return cy.get('.features_items .col-sm-4')
-                    .then((product) => {
-                        this.lookForAProductInformation(product[21])
-                            .click();
-                    });
+                .then((product) => {
+                    this.lookForAProductButton(product[21])
+                        .click();
+                });
     }
 
     getCart() {
         return cy.getElementByName('Cart');
     }
 
-    getProductName() {
-        this.lookForAProduct()
-            .then((siblings) => {
-                const value = siblings[2].innerText;
-                cy.wrap(value).as('productName');
-            });
+    getProductName(siblings) {
+        const value = siblings[2].innerText;
+        cy.wrap(value).as('productName');
     }
 
     // getProductName() {
@@ -97,11 +100,29 @@ class Home {
     // }
 
     getProductPrice() {
-
+        cy.get('.features_items .col-sm-4').then((product) => {
+            cy.wrap(product)
+                .get('[data-product-id="28"]')
+                .siblings()
+                .then((siblings) => {
+                cy.wrap(siblings[3]).invoke('text').as('productPrice');
+            });
+        });
     }
 
     getProductImage() {
-
+        cy.get('.features_items .col-sm-4').then((product) => {
+            cy.wrap(product)
+                .get('[data-product-id="28"]')
+                .siblings()
+                .then((siblings) => {
+                    cy.wrap(siblings[0])
+                        .invoke('attr', 'src')
+                        .then((src) => {
+                            cy.wrap(src).as('productImage');
+                        });
+                });
+        });
     }
 }
 
