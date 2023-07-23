@@ -8,15 +8,15 @@ describe('TC - User workflow for Home page', () => {
         cy.visit('/');
     });
 
-    it('[TC-HC-01] should be able to scroll down to the middle of the page', () => {
+    it('[TC-H-01] should be able to scroll down to the middle of the page', () => {
         home.scroll();
     });
 
-    it('[TC-HC-02] should check if View Product anchor exist', () => {
+    it('[TC-H-02] should check if View Product anchor exist', () => {
         home.lookForAProduct();
     });
 
-    it('[TC-HC-03] should check if View Product anchor has a href property', () => {
+    it('[TC-H-03] should check if View Product anchor has a href property', () => {
         home.lookForAProduct()
             .then((product) => {
                 home.lookForAProductInformation(product[21])
@@ -25,28 +25,28 @@ describe('TC - User workflow for Home page', () => {
                         expect(property).to.exist;
                     });
             });
-    })
+    });
 
-    it('[TC-HC-04] should check if Cart option exist in header', () => {
+    it('[TC-H-04] should check if Cart option exist in header', () => {
         home.getCart()
             .should('exist');
-    })
+    });
 
-    it('[TC-HC-05] should check if Cart option in header has a href property', () => {
+    it('[TC-H-05] should check if Cart option in header has a href property', () => {
         home.getCart()
             .invoke('attr', 'href')
             .then((href) => {
                 expect(href).to.exist;
                 expect(href).to.eq('/view_cart');
             });
-    })
+    });
 
-    it('[TC-HC-06] should check if Contact us option exist in header', () => {
+    it('[TC-H-06] should check if Contact us option exist in header', () => {
         home.getContactUs()
             .should('exist');
     });
 
-    it('[TC-HC-07] should check if Contact us option in header has a href property', () => {
+    it('[TC-H-07] should check if Contact us option in header has a href property', () => {
         home.getContactUs()
             .invoke('attr', 'href')
             .then((href) => {
@@ -55,10 +55,10 @@ describe('TC - User workflow for Home page', () => {
             });
     });
 
-    it('[TC-HC-08] should be able to click in Contact us option in header', () => {
+    it('[TC-H-08] should be able to click in Contact us option in header', () => {
         home.getContactUs()
             .click();
-    })
+    });
     
     // it('[TC-n] should check if Logout option exist in header', () => {
     //     home.getLogout()
@@ -72,5 +72,5 @@ describe('TC - User workflow for Home page', () => {
     //             expect(href).to.exist;
     //             expect(href).to.eq('/logout');
     //         });
-    // })
+    // });
 });
