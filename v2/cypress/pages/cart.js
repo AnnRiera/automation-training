@@ -14,16 +14,24 @@ class Cart {
 
     getSession() {
         cy.visit('/');
-        home.scroll();
-        home.lookForAProductButton().click();
-        productDetails.getQuantityField()
-            .clear().type(this.quantityProduct);
-        productDetails.getAddToCartButton().click();
-        productDetails.getViewCartAnchor().click();
+        home.lookForAProduct()
+            .then((product) => {
+                home.lookForAProductButton(product[21]).click();
+                productDetails.getQuantityField()
+                    .clear().type(this.quantityProduct);
+                productDetails.getAddToCartButton().click();
+                productDetails.getViewCartAnchor().click();
+            });
     }
 
     getProceedToCheckoutButton() {
         return cy.contains('Proceed To Checkout');
+    }
+
+    checkModalExistency() {
+        return this.getProceedToCheckoutButton()
+            .click()
+            .get('#checkoutModal[class^="modal "]')
     }
 }
 

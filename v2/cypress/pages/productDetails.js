@@ -2,6 +2,8 @@
 /// <reference types="cypress" />
 
 class ProductDetails {
+    constructor() {}
+
     getQuantityField() {
         return cy.get('#quantity');
     }

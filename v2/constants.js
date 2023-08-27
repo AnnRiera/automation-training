@@ -30,6 +30,7 @@ const userInfo = {
       expirationMonth: faker.date.future({ years: 5 }).getMonth(),
       expirationYear: faker.date.future({ years: 5 }).getDate(),
     },
+    invalidName: faker.string.hexadecimal({ length: 6, prefix: '#' }),
 };
 
 module.exports = { quantity, subject, comment, pointQuantity, negativeQuantity, word, zeroValue, userInfo };

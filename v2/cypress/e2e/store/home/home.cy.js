@@ -3,7 +3,7 @@
 const Home = require('../../../pages/home');
 const home = new Home();
 
-describe('TC - User workflow for Home page', () => {
+describe('TC - User workflow for Home page (F)', () => {
     beforeEach('load home page', () => {
         cy.visit('/');
     });
@@ -19,7 +19,7 @@ describe('TC - User workflow for Home page', () => {
     it('[TC-H-03] should check if View Product anchor has a href property', () => {
         home.lookForAProduct()
             .then((product) => {
-                home.lookForAProductInformation(product[21])
+                home.lookForAProductButton(product[21])
                     .invoke('attr', 'href')
                     .then((property) => {
                         expect(property).to.exist;
